@@ -25,7 +25,7 @@ var gltf;
 var loader = new GLTFLoader();
 loader.load(
     'models/pyramid.glb',
-    function (gltfData) {
+    (gltfData) => {
         // Assign the loaded gltf data to the gltf variable
         gltf = gltfData;
 
@@ -34,13 +34,13 @@ loader.load(
         scene.add(gltf.scene);
     },
     undefined,
-    function (error) {
+    (error) => {
         console.error(error);
     }
 );
 
 // Render the scene
-var animate = function () {
+var animate = () => {
     requestAnimationFrame(animate);
 
     if (gltf) {
