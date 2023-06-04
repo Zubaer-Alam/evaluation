@@ -31,39 +31,31 @@
     import * as THREE from "three";
     import { GLTFLoader } from "https://unpkg.com/three@0.152.2/examples/jsm/loaders/GLTFLoader.js";
 
-    //Build the scene :
     var scene = new THREE.Scene();
 
-    //Add ambient light
     scene.add(new THREE.AmbientLight(0xffffff));
 
-    /*Create the camera, where the parameters are FOV, aspect ratio, near and far
-      clipping plane. Then, we place the camera at (0,2,15), 2 units above the ground
-      and 15 units away from the origin.
-    */
-    var camera = new THREE.PerspectiveCamera(
+    const camera = new THREE.PerspectiveCamera(
       75,
       window.innerWidth / window.innerHeight,
       0.1, 
       1000 
     );
-    camera.position.set(0, 2, 15);
+    camera.position.set(0, 0, 5);
 
-    var renderer = new THREE.WebGLRenderer();
+    const renderer = new THREE.WebGLRenderer();
+    
     renderer.setSize(window.innerWidth, window.innerHeight);
-    // renderer.setClearColor(0xffffff)
-
+    renderer.setClearColor(0x00ff00)
     document.body.appendChild(renderer.domElement);
 
-    //Create the variable to store the data of the imported gltf/glb model 
     var gltf;
 
-    // Load the 3D model
-    var loader = new GLTFLoader();
+    const loader = new GLTFLoader();
+
     loader.load(
-      '{{ url_for("static", filename="models/senna.glb") }}',
+      '{{ url_for("static", filename="models/pyramid.glb") }}',
       (gltfData) => {
-        // Assign the loaded gltf data to the gltf variable
         gltf = gltfData;
         scene.add(gltf.scene);
       },
@@ -73,16 +65,13 @@
       }
     );
 
-    // Render the scene
+    
     var animate = () => {
       requestAnimationFrame(animate);
 
-      /*The code below is used to induce rotation to the model so 
-        that its 3D properties are clearly discernible to the human eye
-      */
       if (gltf) {
-        gltf.scene.rotation.y += 0.005;
-        //gltf.scene.rotation.x += 0.005;
+        gltf.scene.rotation.y += 0.05;
+        gltf.scene.rotation.x += 0.007;
       }
 
       renderer.render(scene, camera);
