@@ -13,10 +13,11 @@ var camera = new THREE.PerspectiveCamera(
     1000
 );
 camera.position.set(0, 0, 5);
-var renderer = new THREE.WebGLRenderer();
 
+var renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setClearColor(0x00ff00)
+renderer.setClearColor(0x00ff00);
+
 document.body.appendChild(renderer.domElement);
 
 var gltf;
@@ -30,7 +31,7 @@ loader.load(
         gltf = gltfData;
 
         // Scale down the model
-        //gltf.scene.scale.set(0.1, 0.1, 0.1);
+        //gltf.scene.scale.set(0.1, 0.1, 0.1)
         scene.add(gltf.scene);
     },
     undefined,
@@ -45,8 +46,8 @@ var animate = () => {
 
     if (gltf) {
         // Rotate the model if gltf is loaded
-        gltf.scene.rotation.y += 0.05; 
-        gltf.scene.rotation.x += 0.007; 
+        gltf.scene.rotation.y += 0.05;
+        gltf.scene.rotation.x += 0.007;
     }
 
     renderer.render(scene, camera);

@@ -1,0 +1,5 @@
+Dockerfile
+docker-compose.yml
+app/venv
+app/__pycache__
+.gitignore
