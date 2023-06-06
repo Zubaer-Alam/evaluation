@@ -1,9 +1,11 @@
 Prerequisites:
 
-    Git: Follow the installation instructions at Git Installation Guide.
-    Docker: Follow the installation instructions at Docker Installation Guide.
+   1. Git: Install Git
+   2. Docker: Install Docker
 
 Steps:
 
-    Create a new directory where you want to clone the repository and navigate inside it.
-    Open a terminal inside the folder and run the following command to clone the repository:
+   1. Create a new directory where you want to clone the repository and navigate inside it.
+   2. Open a terminal inside the folder and clone the repository by running the following command
+                
+                git clone https://github.com/Zubaer-Alam/evaluation
