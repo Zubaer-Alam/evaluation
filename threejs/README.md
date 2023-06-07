@@ -5,7 +5,7 @@ Steps:
    1. Open a new terminal window in the threejs directory.
    2. Install the required dependencies by typing the following command:
           
-          npm install
+          npm i
     
    3. Build and host the app locally by running the following command:
        
