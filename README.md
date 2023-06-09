@@ -16,7 +16,7 @@ Steps:
           
    4. Build and run the Docker container using the following command:
          
-          docker compose up -d --build --remove-orphans
+          docker compose up -d
           
    5. Open your browser and access http://localhost:5000 to view the app.
    6. After you have finished viewing the app, stop the container by typing the following command in the terminal:
