@@ -5,7 +5,7 @@ Prerequisites:
 
 Steps:
 
-   1. Create a new directory where you want to clone the repository and navigate inside it.
+   1. Navigate to the directory where you want to clone the repository.
    2. Open a terminal inside the folder and clone the repository by running the following command:
                 
           git clone https://github.com/Zubaer-Alam/evaluation
