@@ -1,5 +1,10 @@
 import bpy
 
+import os
+
+script_dir = os.path.dirname(os.path.realpath(__file__))
+output_path = os.path.join(script_dir, "./../models/pyramid.gltf")
+
 # Clear all mesh objects
 bpy.ops.object.select_by_type(type='MESH')
 bpy.ops.object.delete()
@@ -35,4 +40,4 @@ material.blend_method = 'OPAQUE'
 obj.data.materials.append(material)
 
 # Export the model in GLTF format
-bpy.ops.export_scene.gltf(filepath="C:/Users/User/Desktop/TASK/evaluation/blender/models/pyramid.gltf")
+bpy.ops.export_scene.gltf(filepath = output_path)
