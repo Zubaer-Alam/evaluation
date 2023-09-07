@@ -3,7 +3,7 @@ import bpy
 import os
 
 script_dir = os.path.dirname(os.path.realpath(__file__))
-output_path = os.path.join(script_dir, "./../models/pyramid.gltf")
+output_path = os.path.join(script_dir, "./pyramid.gltf")
 
 # Clear all mesh objects
 bpy.ops.object.select_by_type(type='MESH')
